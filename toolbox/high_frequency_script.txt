@@ -1,0 +1,14 @@
+1、print the first column: awk '{print $1}' filename
+2、print the first and second column both: awk '{print $1,$2}' filename
+3、print the first column, and then print the second column following: awk '{print $1 $2}' filename
+4、print the total lines of the file: awk 'END{print NR}' filename
+5、print the first line: awk 'NR==1{print}' filename
+6、print the first column of second line: sed -n "2, 1p" filename | awk 'print $1'
+
+
+The two types assign value to varible:
+    1) arg=`(cmd)`
+    2) arg=$(cmd)
+if you want to assign the total line number of a file to varible, you can try this:
+    1) nlines=`(awk 'END{print NR}' filename)`
+    2) nlines=$(awk 'END{print NR}' filename)
